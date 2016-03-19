@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>elevator game</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/new.css" />
+	<script type="text/javascript" src="js/new.js"></script>
+	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="clock" class="row">
+		<img src="images/clock.png" id="stopwatch">
+		<div id="digitalTime"><p id="time">60</p></div>
+		<div id="score"><p>score <span id="scoreNo">0</span></p></div>
+	</div>
+	<div class="row" id="main">
+		<div id="container">
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor1"></div>
+			</div>
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor2"></div>
+			</div>
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor3"></div>
+			</div>
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor4"></div>
+			</div>
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor5"></div>
+			</div>
+			<div class="row">
+				<div class=".col-lg-10 floor" id="floor6"></div>
+			</div>
+		</div>
+		<div id="elevatorStage">
+			<div id="elevator"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$( document ).ready(function() {
+		document.onkeydown = checkKey;
+		var f=false, elevatorSticks=0, inElevator=[], floorColor;
+		function checkKey(e) {
+		    e = e || window.event;
+
+		    if (e.keyCode == '38') {//up
+        		if(parseInt($("#elevator").css("top")) >= -264 && !f){
+        			countFloor++;//elevator up
+        			f=true;
+        			$("#elevator").animate({top: '-=66px'},function(){
+        				f=false;
+        			});
+        		}
+		    }
+		    else if (e.keyCode == '40') {//down
+		        if(parseInt($("#elevator").css("top")) != 0 && !f){
+		        	countFloor--;//elevator down
+		        	f=true;
+		        	$("#elevator").animate({top: '+=66px'},function(){
+		        		f=false;
+		        	});
+		        }
+		    }
+		    else if (e.keyCode == '37') {//left
+		    	countFloorAddedByOne = (6 - countFloor);
+		    	var out = $('#elevator').find('.stickMan');
+		    	floorColor = $('#floor'+countFloorAddedByOne).css('backgroundColor');
+		    	if (floorColor == 'rgb(0, 0, 255)') {
+		    		floorColor = 'blue';
+		    	} else if (floorColor == 'rgb(255, 255, 0)') {
+		    		floorColor = 'yellow';
+		    	} else if (floorColor == 'rgb(0, 128, 0)') {
+		    		floorColor = 'green';
+		    	} else if (floorColor == 'rgb(255, 0, 0)') {
+		    		floorColor = 'red';
+		    	} else if (floorColor == 'rgb(128, 0, 128)') {
+		    		floorColor = 'purple';
+		    	} else if(floorColor == 'rgb(255, 192, 203)') {
+		    		floorColor = 'pink';
+		    	}
+		    	//console.log($('#elevator').find('.stickMan').map(function () { return this.src; }));
+		    	/*$('#elevator').find('.stickMan').animate({left:'+=70px'}, function(){
+		    		elevatorSticks--;
+			    	$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
+			    });*/
+		    }
+		    else if (e.keyCode == '39') {//right
+		    	countFloorAddedByOne = (6 - countFloor);
+		    	var out = $('#elevator').find('.stickMan');
+		    	if(elevatorSticks < 3){
+			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
+			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
+		    			elevatorSticks++;
+			    		inElevator.push($(this).attr('src'));
+						var temp = inElevator[inElevator.length - 1].slice(7, -4);
+						inElevator.pop();
+						inElevator.push(temp);
+			    	});	
+		    	}
+		    }
+		}
+		window.onscroll = function () { window.scrollTo(0, 0); };
+	});
+</script>
+</html>
