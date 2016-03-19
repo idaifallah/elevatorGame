@@ -20,8 +20,7 @@ function startTimer(duration, display) {
 
 var counter = 500;
 var interval = setInterval(randomTimeImageDisplayer, counter);
-var randomTimeImageDisplayer = function(){
-	console.log("displayImage please");
+var randomTimeImageDisplayer = function(){	
 	displayImage();
     clearInterval(interval);
     counter = Math.floor((Math.random() * 1700) + 500);

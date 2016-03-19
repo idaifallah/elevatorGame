@@ -5,8 +5,8 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/new.css" />
-	<script type="text/javascript" src="js/new.js"></script>
-	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/new.js"></script>	
+	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>	
 </head>
 <body>
 	<div id="clock" class="row">
@@ -51,7 +51,7 @@
         		if(parseInt($("#elevator").css("top")) >= -264 && !f){
         			countFloor++;//elevator up
         			f=true;
-        			$("#elevator").animate({top: '-=66px'},function(){
+        			$("#elevator").animate({top: '-=66px'},100,'linear',function(){
         				f=false;
         			});
         		}
@@ -60,7 +60,7 @@
 		        if(parseInt($("#elevator").css("top")) != 0 && !f){
 		        	countFloor--;//elevator down
 		        	f=true;
-		        	$("#elevator").animate({top: '+=66px'},function(){
+		        	$("#elevator").animate({top: '+=66px'},100,'linear',function(){
 		        		f=false;
 		        	});
 		        }
