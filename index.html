@@ -43,7 +43,7 @@
 <script type="text/javascript">
 	$( document ).ready(function() {
 		document.onkeydown = checkKey;
-		var f=false, elevatorSticks=0, inElevator=[], floorColor;
+		var f=false, elevatorSticks=0, inElevator=[], floorColor; audio = new Audio('ping.mp3');
 		function checkKey(e) {
 		    e = e || window.event;
 
@@ -82,11 +82,19 @@
 		    	} else if(floorColor == 'rgb(255, 192, 203)') {
 		    		floorColor = 'pink';
 		    	}
-		    	//console.log($('#elevator').find('.stickMan').map(function () { return this.src; }));
-		    	/*$('#elevator').find('.stickMan').animate({left:'+=70px'}, function(){
-		    		elevatorSticks--;
-			    	$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
-			    });*/
+		    	for(var i = 0; i <= inElevator.length - 1; i++){
+		    		if(inElevator[i] == floorColor){
+		    			delete inElevator[i];
+		    			$('#elevator').find('img[src="images/'+floorColor+'.png"]').animate({left:'-=90px'}, function(){
+				    		elevatorSticks--;
+					    	$(this).remove();
+					    	var sc = parseInt($('#scoreNo').text());
+					    	sc+=1;
+					    	$('#scoreNo').html(sc);
+					    	audio.play();
+					    });
+		    		}
+		    	}
 		    }
 		    else if (e.keyCode == '39') {//right
 		    	countFloorAddedByOne = (6 - countFloor);
