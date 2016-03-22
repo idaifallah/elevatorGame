@@ -44,6 +44,7 @@
 	$( document ).ready(function() {
 		document.onkeydown = checkKey;
 		var f=false, elevatorSticks=0, inElevator=[], floorColor; audio = new Audio('ping.mp3');
+		var isKeyRepeating = false;
 		function checkKey(e) {
 		    e = e || window.event;
 
@@ -96,10 +97,11 @@
 		    		}
 		    	}
 		    }
-		    else if (e.keyCode == '39') {//right
-		    	countFloorAddedByOne = (6 - countFloor);
+		    else if (e.keyCode == '39' && !isKeyRepeating) {//right
+	    		countFloorAddedByOne = (6 - countFloor);
 		    	var out = $('#elevator').find('.stickMan');
 		    	if(elevatorSticks < 3){
+		    		isKeyRepeating = true;
 			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
 			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
 		    			elevatorSticks++;
@@ -107,7 +109,8 @@
 						var temp = inElevator[inElevator.length - 1].slice(7, -4);
 						inElevator.pop();
 						inElevator.push(temp);
-			    	});	
+			    		isKeyRepeating = false;
+			    	});
 		    	}
 		    }
 		}
