@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/new.css" />
 	<script type="text/javascript" src="js/new.js"></script>	
-	<script   src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>	
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
 </head>
 <body>
 	<div id="clock" class="row">
@@ -100,7 +100,8 @@
 		    else if (e.keyCode == '39' && !isKeyRepeating) {//right
 	    		countFloorAddedByOne = (6 - countFloor);
 		    	var out = $('#elevator').find('.stickMan');
-		    	if(elevatorSticks < 3){
+				var	flo = $('#floor'+countFloorAddedByOne).find('.out');
+		    	if(elevatorSticks < 3 && flo.length >=1 ){
 		    		isKeyRepeating = true;
 			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
 			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
@@ -109,7 +110,7 @@
 						var temp = inElevator[inElevator.length - 1].slice(7, -4);
 						inElevator.pop();
 						inElevator.push(temp);
-			    		isKeyRepeating = false;
+						isKeyRepeating = false;
 			    	});
 		    	}
 		    }

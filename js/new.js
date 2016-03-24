@@ -11,7 +11,7 @@ function startTimer(duration, display) {
         display.textContent = seconds;
 
         if (--timer < 0) {
-            alert('Game Over');
+            //alert('Game Over');
             location.reload();
 			gameover = true;
         }
