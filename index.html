@@ -50,7 +50,7 @@
 		    e = e || window.event;
 
 		    if (e.keyCode == '38') {//up
-        		if(parseInt($("#elevator").css("top")) >= -400 && !f){
+        		if(parseInt($("#elevator").css("top")) >= -320 && !f){
         			countFloor++;//elevator up
         			f=true;
         			$("#elevator").animate({top: '-=80px'},100,'linear',function(){
