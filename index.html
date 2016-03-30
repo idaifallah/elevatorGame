@@ -12,6 +12,7 @@
 	<div id="clock" class="row">
 		<img src="images/clock.png" id="stopwatch">
 		<div id="digitalTime"><p id="time">60</p></div>
+		<div id="targetDiv"><p id="target"></p></div>
 		<div id="score"><p>score <span id="scoreNo">0</span></p></div>
 	</div>
 	<div class="row" id="main">
@@ -49,10 +50,10 @@
 		    e = e || window.event;
 
 		    if (e.keyCode == '38') {//up
-        		if(parseInt($("#elevator").css("top")) >= -264 && !f){
+        		if(parseInt($("#elevator").css("top")) >= -400 && !f){
         			countFloor++;//elevator up
         			f=true;
-        			$("#elevator").animate({top: '-=66px'},100,'linear',function(){
+        			$("#elevator").animate({top: '-=80px'},100,'linear',function(){
         				f=false;
         			});
         		}
@@ -61,7 +62,7 @@
 		        if(parseInt($("#elevator").css("top")) != 0 && !f){
 		        	countFloor--;//elevator down
 		        	f=true;
-		        	$("#elevator").animate({top: '+=66px'},100,'linear',function(){
+		        	$("#elevator").animate({top: '+=80px'},100,'linear',function(){
 		        		f=false;
 		        	});
 		        }
@@ -101,7 +102,7 @@
 	    		countFloorAddedByOne = (6 - countFloor);
 		    	var out = $('#elevator').find('.stickMan');
 				var	flo = $('#floor'+countFloorAddedByOne).find('.out');
-		    	if(elevatorSticks < 3 && flo.length >=1 ){
+		    	if(elevatorSticks < 3 && flo.length >=1){
 		    		isKeyRepeating = true;
 			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
 			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
