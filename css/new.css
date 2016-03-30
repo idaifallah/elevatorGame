@@ -19,46 +19,57 @@
 	height: 481px;
 	width: 10%;
 	float: left;
-	background-image: url('../images/elevStage.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/elevatorstage.jpg');		
+	background-position: 100% 100%;
 }
 #floor1{
 	background-color: pink;
-	background-image: url('../images/pink.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/pinkfloor.png');
+	background-size: 100%;
+	background-position: 100% 30%;
 }
 #floor2{
 	background-color: purple;
-	background-image: url('../images/purple.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/purplefloor.png');
+	background-size: 100%;
+	background-position: 100% 5%;
 }
 #floor3{
 	background-color: red;
-	background-image: url('../images/red.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/redfloor.png');
+	background-size: 100%;
+	background-position: 100% 50%;
 }
 #floor4{
 	background-color: green;
-	background-image: url('../images/green.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/greenfloor.png');
+	background-size: 100%;
+	background-position: 100% 90%;
 }
 #floor5{
 	background-color: yellow;
-	background-image: url('../images/yellow.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/yellowfloor.png');
+	background-size: 110%;
+	background-position: 50% 15%;
 }
 #floor6{
 	background-color: blue;
-	background-image: url('../images/blue.jpg');
-	background-size: 100% 100%;
+	background-image: url('../images/bluefloor.jpg');
+	background-size: 100%;
+	background-position: 100% 60%;
 }
 .out{
-	height: 5%;width: 5%;float: right; margin-top: 0.5%; margin-right: 3%; position: relative;
+	height: 200%;
+	width: 200%;
+	float: right; 
+	margin-top: 0.5%; 
+	margin-right: 3%;	
 }
 #elevator{
 	border: 1px solid black;
-	background-image: url("../images/elevator.jpg");
-	background-size: 100% 100%;
+	background-image: url("../images/elevator.png");
+	background-position: 45% 70%;
+	background-size: 200% 150%;
 	height: 17%;
 	width: 100%;
 	margin-top: 366%;/*step 61%*/
@@ -110,8 +121,45 @@
 	font-size: 3.5em;
 }
 .stickMan{
-	height: 75%;
-	width: 25%;
+	height: 200%;
+	width: 200%;
 	float: right;
 	margin-top: 15%;
+}
+#blueCharacter{
+	height: 19%;
+	width: 10%;
+    float: right;
+	margin-right: 1%;
+}
+#redCharacter{
+	height: 25%;
+	width: 15%;
+    float: right;
+	margin-right: -2%;
+}
+#greenCharacter{
+	height: 25%;
+	width: 15%;
+    float: right;
+	margin-right: -2%;
+}
+#pinkCharacter{
+	height: 7%;
+	width: 7%;
+    float: right;
+	margin-top: 2%;
+	margin-right: 2%;
+}
+#yellowCharacter{
+	height: 15%;
+	width: 15%;
+    float: right;
+	margin-right: -2%;
+}
+#purpleCharacter{
+	height: 7%;
+	width: 7%;
+    float: right;
+	margin-right: 2%;
 }

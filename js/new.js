@@ -1,4 +1,4 @@
-var imagesArray = ['pink.png', 'purple.png', 'red.png', 'green.png', 'yellow.png', 'blue.png'];
+var imagesArray = ['pink', 'purple', 'red', 'green', 'yellow', 'blue'];
 var countFloor = 0;//to check elevator in which floor is
 var gameover = false;
 function startTimer(duration, display) {
@@ -45,6 +45,6 @@ function displayImage(){
 	if (randomnumber == num+1) {
 		num++;
 	}
-	var img = '<img src="images/'+imagesArray[num]+'" class="out"/>'
+	var img = '<img src="images/'+imagesArray[num]+'.png" class="out" id="'+imagesArray[num]+'Character"/>'
 	document.getElementById(bomb).innerHTML = img;
 }
