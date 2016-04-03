@@ -1,6 +1,5 @@
 var imagesArray = ['pink', 'purple', 'red', 'green', 'yellow', 'blue'];
 var countFloor = 0;//to check elevator in which floor is
-var gameover = false;
 function startTimer(duration, display) {
     var timer = duration, seconds;
     setInterval(function () {
@@ -12,8 +11,14 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             //alert('Game Over');
-            location.reload();
-			gameover = true;
+            //location.reload();
+			if (parseInt(document.getElementById('scoreNo')) >= parseInt(document.getElementById('target'))) {
+				alert("You Win");
+				location.reload();
+			} else {
+				alert("You Failed :P");
+				location.reload();
+			}
         }
     }, 1000);
 }
@@ -33,6 +38,7 @@ window.onload = function () {
     var randomTarget = Math.floor((Math.random() * 15)) + 15;
     console.log(randomTarget);
     $("#target").html('Target: ' + randomTarget);
+	alert(document.getElementById('scoreNo').parseInt);
 };
 
 function displayImage(){

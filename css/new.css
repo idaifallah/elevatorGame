@@ -121,28 +121,25 @@
 	font-size: 3.5em;
 }
 .stickMan{
-	height: 200%;
-	width: 200%;
+	height: 50% !important;
+	width: 30% !important;
 	float: right;
 	margin-top: 15%;
 }
 #blueCharacter{
-	height: 19%;
-	width: 10%;
+	height: 8.5%;
+	width: 8.5%;
     float: right;
-	margin-right: 1%;
 }
 #redCharacter{
-	height: 25%;
-	width: 15%;
+	height: 8.5%;
+	width: 8.5%;
     float: right;
-	margin-right: -2%;
 }
 #greenCharacter{
-	height: 25%;
-	width: 15%;
+	height: 8.5%;
+	width: 8.5%;
     float: right;
-	margin-right: -2%;
 }
 #pinkCharacter{
 	height: 7%;
@@ -152,10 +149,9 @@
 	margin-right: 2%;
 }
 #yellowCharacter{
-	height: 15%;
-	width: 15%;
+	height: 8.5%;
+	width: 8.5%;
     float: right;
-	margin-right: -2%;
 }
 #purpleCharacter{
 	height: 7%;

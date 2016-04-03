@@ -3,7 +3,7 @@
 <head>
 	<title>elevator game</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/new.css" />
 	<script type="text/javascript" src="js/new.js"></script>	
 	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
@@ -105,7 +105,10 @@
 		    	if(elevatorSticks < 3 && flo.length >=1){
 		    		isKeyRepeating = true;
 			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
-			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0);
+			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0)
+						if($('stickMan').find('pinkCharacter')){
+							$(this).css('margin-top','5%');
+						};
 		    			elevatorSticks++;
 			    		inElevator.push($(this).attr('src'));
 						var temp = inElevator[inElevator.length - 1].slice(7, -4);
