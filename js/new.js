@@ -1,5 +1,6 @@
-var imagesArray = ['pink.png', 'purple.png', 'red.png', 'green.png', 'yellow.png', 'blue.png'];
+var imagesArray = ['pink', 'purple', 'red', 'green', 'yellow', 'blue'];
 var countFloor = 0;//to check elevator in which floor is
+var randomTarget = sc = 0, backgroundMusic = new Audio('NatureFurious.mp3');
 function startTimer(duration, display) {
     var timer = duration, seconds;
     setInterval(function () {
@@ -11,7 +12,14 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             //alert('Game Over');
-            location.reload();
+            //location.reload();
+			if (sc >= randomTarget) {
+				alert("You Win");
+				location.reload();
+			} else {
+				alert("You Failed :P");
+				location.reload();
+			}
         }
     }, 1000);
 }
@@ -28,9 +36,10 @@ window.onload = function () {
     var Minute = 60, display = document.querySelector('#time');
     startTimer(Minute, display);
 	randomTimeImageDisplayer();
-    var randomTarget = Math.floor((Math.random() * 15)) + 15;
+    randomTarget = Math.floor((Math.random() * 15)) + 15;
     console.log(randomTarget);
     $("#target").html('Target: ' + randomTarget);
+    backgroundMusic.play();
 };
 
 function displayImage(){
@@ -43,6 +52,6 @@ function displayImage(){
 	if (randomnumber == num+1) {
 		num++;
 	}
-	var img = '<img src="images/'+imagesArray[num]+'" class="out"/>'
+	var img = '<img src="images/'+imagesArray[num]+'.png" class="out" id="'+imagesArray[num]+'Character"/>'
 	document.getElementById(bomb).innerHTML = img;
 }
