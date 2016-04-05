@@ -20,9 +20,6 @@ function startTimer(duration, display) {
 				alert("You Failed :P");
 				location.reload();
 			}
-				alert("You Failed :P");
-				location.reload();
-			}
         }
     }, 1000);
 }
