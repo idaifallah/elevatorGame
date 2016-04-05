@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="js/new.js"></script>	
 	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
 </head>
-<body>
+<body style="background-image: url('./images/back.jpg')">
 	<div id="clock" class="row">
 		<img src="images/clock.png" id="stopwatch">
 		<div id="digitalTime"><p id="time">60</p></div>
@@ -90,7 +90,7 @@
 		    			$('#elevator').find('img[src="images/'+floorColor+'.png"]').animate({left:'-=90px'}, function(){
 				    		elevatorSticks--;
 					    	$(this).remove();
-					    	var sc = parseInt($('#scoreNo').text());
+					    	sc = parseInt($('#scoreNo').text());
 					    	sc+=1;
 					    	$('#scoreNo').html(sc);
 					    	audio.play();
