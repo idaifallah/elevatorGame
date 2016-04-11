@@ -104,7 +104,7 @@
 				var	flo = $('#floor'+countFloorAddedByOne).find('.out');
 		    	if(elevatorSticks < 3 && flo.length >=1){
 		    		isKeyRepeating = true;
-			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=70px'}, function(){
+			    	$('#floor'+countFloorAddedByOne).find('.out').animate({left:'+=120px'}, function(){
 			    		$(this).prependTo('#elevator').addClass('stickMan').css('left', 0)
 						if($('stickMan').find('pinkCharacter')){
 							$(this).css('margin-top','5%');
