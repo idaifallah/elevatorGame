@@ -63,7 +63,8 @@
 	width: 200%;
 	float: right; 
 	margin-top: 0.5%; 
-	margin-right: 3%;	
+	margin-right: 3%;
+	position: relative;
 }
 #elevator{
 	border: 1px solid black;
